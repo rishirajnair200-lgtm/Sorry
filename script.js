@@ -1,5 +1,3 @@
-alert("Script is working!");
-
 const letter = `Dear Manya ❤️
 
 Sometimes I get loud...
