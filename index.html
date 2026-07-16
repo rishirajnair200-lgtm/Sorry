@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>For Manya ❤️</title>
+<style>
+body{margin:0;font-family:Arial,sans-serif;background:linear-gradient(#ffd6e7,#fff);overflow-x:hidden;text-align:center;color:#444}
+.sec{min-height:100vh;display:flex;flex-direction:column;justify-content:center;align-items:center;padding:20px}
+h1{font-size:3em;color:#ff4f8f} .card{background:#fff;border-radius:20px;padding:25px;max-width:700px;box-shadow:0 10px 30px rgba(0,0,0,.15)}
+.heart{position:fixed;bottom:-30px;animation:rise 6s linear forwards}
+@keyframes rise{to{transform:translateY(-110vh);opacity:0}}
+button{padding:12px 24px;border:none;border-radius:30px;background:#ff4f8f;color:#fff}
+</style></head><body>
+<div class="sec"><h1>For Manya ❤️</h1><p>A little place made with love.</p><button onclick="document.getElementById('letter').scrollIntoView({behavior:'smooth'})">Open My Heart 💖</button></div>
+<div class="sec"><div class="card" id="letter"><h2>🥺 An Apology</h2><p>Dear Manya,<br><br>
+Ik Sometimes I get a bit loud and sometimes I scream. I am really sorry for everything that I have done bad till now if it was hurting your feelings or hurting you in person. I know I make mistakes, but I truly want to become a better person.<br><br>
+I will improve myself before tying the bond between us and having kids in the future. I'll still ask you to be safe in whatever you do because I care about you, but I will never scream at you ever again. 🥺<br><br>
+I hope you'll forgive me. ❤️</p><h3>Forever Yours ❤️</h3></div></div>
+<script>
+setInterval(()=>{let h=document.createElement('div');h.className='heart';h.textContent=['❤️','💖','💕','💗'][Math.floor(Math.random()*4)];h.style.left=Math.random()*100+'vw';h.style.fontSize=(20+Math.random()*20)+'px';document.body.appendChild(h);setTimeout(()=>h.remove(),6000)},300);
+</script></body></html>
