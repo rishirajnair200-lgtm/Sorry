@@ -21,187 +21,145 @@ I love you.
 Forever,
 Rishi ❤️`;
 
+
 const typedText = document.getElementById("typedText");
 
 let i = 0;
 
+
 function typeWriter(){
 
-if(i < letter.length){
+    if(i < letter.length){
 
-typedText.innerHTML += letter.charAt(i);
+        typedText.innerHTML += letter.charAt(i);
 
-i++;
+        i++;
 
-setTimeout(typeWriter,40);
+        setTimeout(typeWriter,40);
+
+    }
 
 }
 
-}
 
-window.onload=()=>{
 
-typeWriter();
-
-createHearts();
-
-};
 
 function createHearts(){
 
-setInterval(()=>{
+    setInterval(()=>{
 
-const heart=document.createElement("div");
+        const heart = document.createElement("div");
 
-heart.className="heart";
+        heart.className = "heart";
 
-heart.innerHTML=["❤️","💖","💕","💗"][Math.floor(Math.random()*4)];
+        heart.innerHTML = ["❤️","💖","💕","💗"]
+        [Math.floor(Math.random()*4)];
 
-heart.style.left=Math.random()*100+"vw";
+        heart.style.left = Math.random()*100 + "vw";
 
-heart.style.fontSize=(18+Math.random()*22)+"px";
+        heart.style.fontSize = (18 + Math.random()*22) + "px";
 
-heart.style.animationDuration=(6+Math.random()*5)+"s";
+        heart.style.animationDuration = (6 + Math.random()*5) + "s";
 
-document.getElementById("hearts").appendChild(heart);
 
-setTimeout(()=>{
+        document.getElementById("hearts")
+        .appendChild(heart);
 
-heart.remove();
 
-},11000);
+        setTimeout(()=>{
 
-},350);
+            heart.remove();
 
-}
+        },11000);
 
-const cards=document.querySelectorAll(".glass");
 
-const observer=new IntersectionObserver(entries=>{
-
-entries.forEach(entry=>{
-
-if(entry.isIntersecting){
-
-entry.target.animate([
-
-{
-
-opacity:0,
-
-transform:"translateY(40px)"
-
-},
-
-{
-
-opacity:1,
-
-transform:"translateY(0)"
+    },350);
 
 }
 
-],{
 
-duration:900,
 
-fill:"forwards"
 
-});
 
-}
+window.onload = ()=>{
 
-});
+    typeWriter();
 
-});
-
-cards.forEach(card=>observer.observe(card));
-
-document.getElementById("startBtn").addEventListener("click",()=>{
-
-window.scrollTo({
-
-top:window.innerHeight,
-
-behavior:"smooth"
-
-});
-
-});
-
-;
-
-});
-
-});
-const audio=document.getElementById("audio");
-
-const playBtn=document.getElementById("playBtn");
-
-const progress=document.getElementById("progress");
-
-const time=document.getElementById("time");
-
-playBtn.onclick=()=>{
-
-if(audio.paused){
-
-audio.play();
-
-playBtn.innerHTML="⏸ Pause";
-
-}else{
-
-audio.pause();
-
-playBtn.innerHTML="▶ Play";
-
-}
-
-}
-
-audio.addEventListener("timeupdate",()=>{
-
-progress.max=audio.duration;
-
-progress.value=audio.currentTime;
-
-let m1=Math.floor(audio.currentTime/60);
-
-let s1=Math.floor(audio.currentTime%60);
-
-let m2=Math.floor(audio.duration/60)||0;
-
-let s2=Math.floor(audio.duration%60)||0;
-
-if(s1<10)s1="0"+s1;
-
-if(s2<10)s2="0"+s2;
-
-time.innerHTML=`${m1}:${s1} / ${m2}:${s2}`;
-
-});
-
-progress.oninput=()=>{
-
-audio.currentTime=progress.value;
+    createHearts();
 
 };
-setInterval(()=>{
 
-let heart=document.createElement("div");
 
-heart.className="heart";
-heart.innerHTML="❤️";
 
-heart.style.left=Math.random()*100+"%";
-heart.style.fontSize=(Math.random()*20+15)+"px";
-heart.style.animationDuration=(Math.random()*5+5)+"s";
 
-document.body.appendChild(heart);
 
-setTimeout(()=>{
-heart.remove();
-},8000);
+// Card animation
 
-},500);
+const cards = document.querySelectorAll(".glass");
+
+
+const observer = new IntersectionObserver(entries=>{
+
+    entries.forEach(entry=>{
+
+        if(entry.isIntersecting){
+
+            entry.target.animate(
+
+            [
+                {
+                    opacity:0,
+                    transform:"translateY(40px)"
+                },
+
+                {
+                    opacity:1,
+                    transform:"translateY(0)"
+                }
+            ],
+
+            {
+                duration:900,
+                fill:"forwards"
+            }
+
+            );
+
+        }
+
+    });
+
+});
+
+
+
+cards.forEach(card=>{
+
+    observer.observe(card);
+
+});
+
+
+
+
+
+// Open heart button
+
+const startBtn = document.getElementById("startBtn");
+
+
+if(startBtn){
+
+startBtn.addEventListener("click",()=>{
+
+    window.scrollTo({
+
+        top:window.innerHeight,
+
+        behavior:"smooth"
+
+    });
+
+});
+
+}
