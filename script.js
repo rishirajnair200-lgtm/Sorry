@@ -1,9 +1,9 @@
-const message = `Dear Manya ❤️
+const text = `Dear Manya ❤️
 
 Sometimes I get loud...
-Sometimes I let my emotions take over.
+Sometimes my emotions take over.
 
-I'm sorry for every moment where my words hurt you.
+I'm sorry for the moments where my words hurt you.
 
 You deserve patience, kindness and love.
 
@@ -15,18 +15,15 @@ Forever,
 Rishi ❤️`;
 
 
-let index = 0;
-
-const text = document.getElementById("letter");
-
+let i = 0;
 
 function typing(){
 
-if(index < message.length){
+if(i < text.length){
 
-text.innerHTML += message[index];
+document.getElementById("typing").innerHTML += text.charAt(i);
 
-index++;
+i++;
 
 setTimeout(typing,40);
 
@@ -35,7 +32,8 @@ setTimeout(typing,40);
 }
 
 
-function hearts(){
+
+function createHearts(){
 
 setInterval(()=>{
 
@@ -47,9 +45,11 @@ heart.innerHTML="❤️";
 
 heart.style.left=Math.random()*100+"vw";
 
-heart.style.fontSize=(20+Math.random()*20)+"px";
+heart.style.fontSize=(15+Math.random()*25)+"px";
+
 
 document.getElementById("hearts").appendChild(heart);
+
 
 
 setTimeout(()=>{
@@ -59,23 +59,25 @@ heart.remove();
 },7000);
 
 
+
 },400);
 
 }
 
 
 
-window.onload=function(){
+
+window.onload=()=>{
 
 typing();
 
-hearts();
+createHearts();
 
 };
 
 
 
-document.getElementById("open").onclick=function(){
+document.getElementById("openBtn").onclick=()=>{
 
 window.scrollTo({
 
