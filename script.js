@@ -1,20 +1,13 @@
-const letter = `Dear Manya ❤️
+const message = `Dear Manya ❤️
 
 Sometimes I get loud...
 Sometimes I let my emotions take over.
 
-I'm really sorry for every moment where my words hurt you.
+I'm sorry for every moment where my words hurt you.
 
-You deserve patience,
-kindness,
-and love.
+You deserve patience, kindness and love.
 
-I'm working on becoming a better person every single day.
-
-I'll always care about your safety,
-but I never want that care to come out as shouting.
-
-I hope you'll forgive me.
+I'm working on becoming a better person every day.
 
 I love you.
 
@@ -22,144 +15,74 @@ Forever,
 Rishi ❤️`;
 
 
-const typedText = document.getElementById("typedText");
+let index = 0;
 
-let i = 0;
+const text = document.getElementById("letter");
 
 
-function typeWriter(){
+function typing(){
 
-    if(i < letter.length){
+if(index < message.length){
 
-        typedText.innerHTML += letter.charAt(i);
+text.innerHTML += message[index];
 
-        i++;
+index++;
 
-        setTimeout(typeWriter,40);
+setTimeout(typing,40);
 
-    }
+}
+
+}
+
+
+function hearts(){
+
+setInterval(()=>{
+
+let heart=document.createElement("div");
+
+heart.className="heart";
+
+heart.innerHTML="❤️";
+
+heart.style.left=Math.random()*100+"vw";
+
+heart.style.fontSize=(20+Math.random()*20)+"px";
+
+document.getElementById("hearts").appendChild(heart);
+
+
+setTimeout(()=>{
+
+heart.remove();
+
+},7000);
+
+
+},400);
 
 }
 
 
 
+window.onload=function(){
 
-function createHearts(){
+typing();
 
-    setInterval(()=>{
-
-        const heart = document.createElement("div");
-
-        heart.className = "heart";
-
-        heart.innerHTML = ["❤️","💖","💕","💗"]
-        [Math.floor(Math.random()*4)];
-
-        heart.style.left = Math.random()*100 + "vw";
-
-        heart.style.fontSize = (18 + Math.random()*22) + "px";
-
-        heart.style.animationDuration = (6 + Math.random()*5) + "s";
-
-
-        document.getElementById("hearts")
-        .appendChild(heart);
-
-
-        setTimeout(()=>{
-
-            heart.remove();
-
-        },11000);
-
-
-    },350);
-
-}
-
-
-
-
-
-window.onload = ()=>{
-
-    typeWriter();
-
-    createHearts();
+hearts();
 
 };
 
 
 
+document.getElementById("open").onclick=function(){
 
+window.scrollTo({
 
-// Card animation
+top:window.innerHeight,
 
-const cards = document.querySelectorAll(".glass");
-
-
-const observer = new IntersectionObserver(entries=>{
-
-    entries.forEach(entry=>{
-
-        if(entry.isIntersecting){
-
-            entry.target.animate(
-
-            [
-                {
-                    opacity:0,
-                    transform:"translateY(40px)"
-                },
-
-                {
-                    opacity:1,
-                    transform:"translateY(0)"
-                }
-            ],
-
-            {
-                duration:900,
-                fill:"forwards"
-            }
-
-            );
-
-        }
-
-    });
+behavior:"smooth"
 
 });
 
-
-
-cards.forEach(card=>{
-
-    observer.observe(card);
-
-});
-
-
-
-
-
-// Open heart button
-
-const startBtn = document.getElementById("startBtn");
-
-
-if(startBtn){
-
-startBtn.addEventListener("click",()=>{
-
-    window.scrollTo({
-
-        top:window.innerHeight,
-
-        behavior:"smooth"
-
-    });
-
-});
-
-}
+};
