@@ -2,94 +2,37 @@
 margin:0;
 padding:0;
 box-sizing:border-box;
-scroll-behavior:smooth;
 }
 
 
 body{
-font-family:'Poppins',sans-serif;
-background:linear-gradient(180deg,#0b1020,#141b33,#1d0f24);
-color:#fff;
+
+font-family:Poppins,sans-serif;
+
+background:linear-gradient(180deg,#120018,#2b1025,#05000a);
+
+color:white;
+
 overflow-x:hidden;
+
 }
 
 
 section{
+
 min-height:100vh;
+
 display:flex;
+
 justify-content:center;
+
 align-items:center;
+
 flex-direction:column;
-padding:50px 20px;
+
+padding:30px;
+
 text-align:center;
-position:relative;
-}
-
-
-.hero{
-background:linear-gradient(rgba(0,0,0,.55),rgba(0,0,0,.75));
-}
-
-
-.glass{
-
-background:rgba(255,255,255,.08);
-
-backdrop-filter:blur(14px);
-
-border:1px solid rgba(255,255,255,.15);
-
-padding:35px;
-
-border-radius:25px;
-
-max-width:800px;
-
-width:90%;
-
-box-shadow:0 0 40px rgba(255,105,180,.15);
-
-animation:fadeUp 1.2s ease;
-
-}
-
-
-
-h1{
-
-font-family:'Great Vibes',cursive;
-
-font-size:4rem;
-
-color:#ff7db3;
-
-margin-bottom:15px;
-
-}
-
-
-
-h2{
-
-font-family:'Great Vibes',cursive;
-
-font-size:3rem;
-
-margin-bottom:20px;
-
-color:#ffd4e6;
-
-}
-
-
-
-.subtitle{
-
-font-size:1.2rem;
-
-opacity:.9;
-
-line-height:1.8;
 
 }
 
@@ -97,91 +40,104 @@ line-height:1.8;
 
 .card{
 
-line-height:2;
+background:rgba(255,255,255,0.1);
 
-font-size:1.05rem;
+backdrop-filter:blur(15px);
+
+padding:35px;
+
+border-radius:25px;
+
+max-width:700px;
+
+width:90%;
+
+box-shadow:0 0 40px rgba(255,100,170,.3);
+
+animation:appear 1s ease;
 
 }
 
 
 
-button,.musicBtn{
+h1,h2{
 
-margin-top:30px;
+font-family:"Great Vibes",cursive;
+
+color:#ff8fbd;
+
+}
+
+
+h1{
+
+font-size:4rem;
+
+}
+
+
+h2{
+
+font-size:3rem;
+
+margin-bottom:20px;
+
+}
+
+
+
+p{
+
+line-height:2;
+
+font-size:18px;
+
+}
+
+
+
+button{
+
+margin-top:25px;
 
 padding:15px 35px;
 
 border:none;
 
-border-radius:40px;
+border-radius:50px;
 
-background:#ff4f8f;
+background:#ff4f91;
 
 color:white;
 
-font-size:1rem;
+font-size:17px;
 
 cursor:pointer;
 
-text-decoration:none;
+}
 
-transition:.35s;
 
-display:inline-block;
+
+button:hover{
+
+transform:scale(1.05);
 
 }
 
 
 
-button:hover,.musicBtn:hover{
-
-transform:translateY(-4px) scale(1.05);
-
-background:#ff2f74;
-
-box-shadow:0 0 25px rgba(255,79,143,.45);
-
-}
-
-
-
-.ending h1{
-
-font-size:4.5rem;
-
-}
-
-
-
-.ending p{
-
-margin-top:20px;
-
-opacity:.75;
-
-}
-
-
-
-/* Floating Hearts */
 
 #hearts{
 
 position:fixed;
 
-top:0;
-
-left:0;
-
-width:100%;
-
-height:100%;
+inset:0;
 
 pointer-events:none;
 
 overflow:hidden;
 
-z-index:1;
+z-index:10;
 
 }
 
@@ -189,32 +145,23 @@ z-index:1;
 
 .heart{
 
-position:fixed;
+position:absolute;
 
 bottom:-30px;
 
-font-size:20px;
+font-size:25px;
 
-animation:floatUp 8s linear forwards;
-
-opacity:.7;
+animation:rise 7s linear forwards;
 
 }
 
 
 
-@keyframes floatUp{
+@keyframes rise{
 
 0%{
 
-transform:translateY(0) rotate(0deg);
-
-opacity:0;
-
-}
-
-
-20%{
+transform:translateY(0) rotate(0);
 
 opacity:1;
 
@@ -223,7 +170,7 @@ opacity:1;
 
 100%{
 
-transform:translateY(-120vh) rotate(360deg);
+transform:translateY(-110vh) rotate(360deg);
 
 opacity:0;
 
@@ -233,60 +180,21 @@ opacity:0;
 
 
 
-
-
-@keyframes fadeUp{
+@keyframes appear{
 
 from{
 
 opacity:0;
 
-transform:translateY(30px);
+transform:translateY(40px);
 
 }
-
 
 to{
 
 opacity:1;
 
 transform:translateY(0);
-
-}
-
-}
-
-
-
-
-
-@media(max-width:768px){
-
-
-h1{
-
-font-size:3rem;
-
-}
-
-
-h2{
-
-font-size:2.3rem;
-
-}
-
-
-.subtitle{
-
-font-size:1rem;
-
-}
-
-
-.glass{
-
-padding:25px;
 
 }
 
