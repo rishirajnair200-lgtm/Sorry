@@ -1,3 +1,4 @@
+console.log("Manya website loaded ❤️");
 const text = `Dear Manya ❤️
 
 Sometimes I get loud...
