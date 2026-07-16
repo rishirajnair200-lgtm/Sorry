@@ -1,19 +1,205 @@
 <!DOCTYPE html>
-<html><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>For Manya ❤️</title>
-<style>
-body{margin:0;font-family:Arial,sans-serif;background:linear-gradient(#ffd6e7,#fff);overflow-x:hidden;text-align:center;color:#444}
-.sec{min-height:100vh;display:flex;flex-direction:column;justify-content:center;align-items:center;padding:20px}
-h1{font-size:3em;color:#ff4f8f} .card{background:#fff;border-radius:20px;padding:25px;max-width:700px;box-shadow:0 10px 30px rgba(0,0,0,.15)}
-.heart{position:fixed;bottom:-30px;animation:rise 6s linear forwards}
-@keyframes rise{to{transform:translateY(-110vh);opacity:0}}
-button{padding:12px 24px;border:none;border-radius:30px;background:#ff4f8f;color:#fff}
-</style></head><body>
-<div class="sec"><h1>For Manya ❤️</h1><p>A little place made with love.</p><button onclick="document.getElementById('letter').scrollIntoView({behavior:'smooth'})">Open My Heart 💖</button></div>
-<div class="sec"><div class="card" id="letter"><h2>🥺 An Apology</h2><p>Dear Manya,<br><br>
-Ik Sometimes I get a bit loud and sometimes I scream. I am really sorry for everything that I have done bad till now if it was hurting your feelings or hurting you in person. I know I make mistakes, but I truly want to become a better person.<br><br>
-I will improve myself before tying the bond between us and having kids in the future. I'll still ask you to be safe in whatever you do because I care about you, but I will never scream at you ever again. 🥺<br><br>
-I hope you'll forgive me. ❤️</p><h3>Forever Yours ❤️</h3></div></div>
-<script>
-setInterval(()=>{let h=document.createElement('div');h.className='heart';h.textContent=['❤️','💖','💕','💗'][Math.floor(Math.random()*4)];h.style.left=Math.random()*100+'vw';h.style.fontSize=(20+Math.random()*20)+'px';document.body.appendChild(h);setTimeout(()=>h.remove(),6000)},300);
-</script></body></html>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&family=Great+Vibes&display=swap" rel="stylesheet">
+
+<link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<div id="hearts"></div>
+
+<!-- Hero -->
+
+<section class="hero">
+
+<div class="glass">
+
+<h1>For Manya ❤️</h1>
+
+<p class="subtitle">
+
+Every love story is beautiful...
+
+but ours is my favorite.
+
+</p>
+
+<button id="startBtn">
+
+Open My Heart 💌
+
+</button>
+
+</div>
+
+</section>
+
+<!-- Memories -->
+
+<section class="memories">
+
+<h2>Our Beautiful Memories</h2>
+
+<p class="small">
+
+Every picture reminds me why I fell in love with you.
+
+</p>
+
+<div class="gallery">
+
+<div class="photo">
+<img src="images/photo1.jpg" alt="">
+</div>
+
+<div class="photo">
+<img src="images/photo2.jpg" alt="">
+</div>
+
+<div class="photo">
+<img src="images/photo3.jpg" alt="">
+</div>
+
+<div class="photo">
+<img src="images/photo4.jpg" alt="">
+</div>
+
+<div class="photo">
+<img src="images/photo5.jpg" alt="">
+</div>
+
+</div>
+
+</section>
+
+<!-- Love Letter -->
+
+<section class="letter">
+
+<div class="glass card">
+
+<h2>Dear Manya ❤️</h2>
+
+<p id="typedText"></p>
+
+</div>
+
+</section>
+
+<!-- Promise -->
+
+<section class="promise">
+
+<div class="glass card">
+
+<h2>My Promise 🌸</h2>
+
+<p>
+
+I'll always try to become a better version of myself.
+
+I don't want my love to ever make you feel hurt.
+
+I want it to make you feel safe,
+
+happy,
+
+and loved.
+
+</p>
+
+</div>
+
+</section>
+
+<!-- Apology -->
+
+<section class="apology">
+
+<div class="glass card">
+
+<h2>I'm Sorry 🥺</h2>
+
+<p>
+
+Ik sometimes I get a bit loud and sometimes I scream.
+
+I'm really sorry for everything that I have done that hurt your feelings or hurt you in person.
+
+I know I've made mistakes.
+
+I'm working on becoming a calmer and better person.
+
+I'll always care about your safety,
+
+but I never want that care to come out as shouting.
+
+I want my actions to show you that I'm growing every single day.
+
+I hope one day you'll look back and see how much I changed because you mean the world to me.
+
+❤️
+
+</p>
+
+</div>
+
+</section>
+
+<!-- Music -->
+
+<section class="music">
+
+<h2>Our Song 🎵</h2>
+
+<p>
+
+Tap below while listening to
+
+<strong>Thinking About You</strong>
+
+</p>
+
+<a
+class="musicBtn"
+href="#">
+
+Play Our Song ❤️
+
+</a>
+
+</section>
+
+<!-- Ending -->
+
+<section class="ending">
+
+<h1>
+
+I'd Choose You
+
+In Every Lifetime.
+
+❤️
+
+</h1>
+
+<p>
+
+Made with love by Rishi
+
+</p>
+
+</section>
+
+<script src="script.js"></script>
+
+</body>
+</html>
