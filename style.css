@@ -221,3 +221,26 @@ font-size:.95rem;
     border-radius: 20px;
     box-shadow: 0 5px 20px rgba(0,0,0,0.3);
 }
+.heart{
+    position:fixed;
+    bottom:-20px;
+    color:white;
+    animation:float 8s linear infinite;
+    opacity:0.7;
+}
+
+@keyframes float{
+    0%{
+        transform:translateY(0) rotate(0deg);
+        opacity:0;
+    }
+
+    20%{
+        opacity:1;
+    }
+
+    100%{
+        transform:translateY(-110vh) rotate(360deg);
+        opacity:0;
+    }
+}
