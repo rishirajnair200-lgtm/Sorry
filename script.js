@@ -129,49 +129,7 @@ behavior:"smooth"
 
 });
 
-const gallery=document.querySelectorAll(".photo img");
-
-gallery.forEach(img=>{
-
-img.addEventListener("click",()=>{
-
-const overlay=document.createElement("div");
-
-overlay.style.position="fixed";
-
-overlay.style.top="0";
-
-overlay.style.left="0";
-
-overlay.style.width="100%";
-
-overlay.style.height="100%";
-
-overlay.style.background="rgba(0,0,0,.92)";
-
-overlay.style.display="flex";
-
-overlay.style.justifyContent="center";
-
-overlay.style.alignItems="center";
-
-overlay.style.zIndex="9999";
-
-const big=document.createElement("img");
-
-big.src=img.src;
-
-big.style.maxWidth="90%";
-
-big.style.maxHeight="90%";
-
-big.style.borderRadius="20px";
-
-overlay.appendChild(big);
-
-overlay.onclick=()=>overlay.remove();
-
-document.body.appendChild(overlay);
+;
 
 });
 
